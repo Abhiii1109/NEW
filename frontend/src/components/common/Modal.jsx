@@ -19,11 +19,11 @@ const Modal = ({ isOpen, onClose, title, children, className }) => {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 10 }}
             className={cn(
-                "relative bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden border border-slate-200",
+                "relative bg-white rounded-xl shadow-2xl w-full max-w-lg overflow-hidden border",
                 className
             )}
           >
-            <div className="flex items-center justify-between p-6 border-b border-slate-50">
+            <div className="flex items-center justify-between p-6 border-b">
               <h3 className="text-xl font-black text-primary tracking-tight">{title}</h3>
               <button 
                 onClick={onClose} 

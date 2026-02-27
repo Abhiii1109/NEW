@@ -189,7 +189,7 @@ const EmployeeLeave = () => {
               { name: "Sanya Gupta", role: "Designer", status: "Half Day", avatar: "2" },
               { name: "Amit Kumar", role: "Developer", status: "WFH", avatar: "3" },
             ].map((member, i) => (
-              <div key={i} className="flex items-center gap-4 p-3 rounded-lg border border-transparent hover:border-slate-100 hover:bg-slate-50 transition-colors">
+              <div key={i} className="flex items-center gap-4 p-3 rounded-lg border-transparent hover:border-slate-100 hover:bg-slate-50 transition-colors">
                 <img src={`https://i.pravatar.cc/150?u=${member.avatar}`} className="w-8 h-8 rounded-lg" alt="" />
                 <div className="flex-1 min-w-0">
                   <h4 className="text-sm font-bold text-primary truncate">{member.name}</h4>
@@ -205,10 +205,10 @@ const EmployeeLeave = () => {
       </div>
 
       <Card title="Request Ledger" subtitle="Formal log of all submitted time-off documentation">
-        <div className="overflow-hidden rounded-lg border border-slate-200 mt-2">
+        <div className="overflow-hidden rounded-lg mt-2">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-[11px] text-muted font-bold uppercase tracking-widest">
+              <tr className="bg-slate-50 border-b text-[11px] text-muted font-bold uppercase tracking-widest">
                 <th className="py-4 px-6">Leave Variant</th>
                 <th className="py-4 px-6">Date Range</th>
                 <th className="py-4 px-6">Quantity</th>
@@ -279,7 +279,7 @@ const EmployeeLeave = () => {
           <div className="space-y-2">
             <label className="text-[11px] font-black text-muted uppercase tracking-widest">Type of Documentation</label>
             <select
-                className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-lg text-sm font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all"
+                className="w-full px-4 py-2.5 bg-white rounded-lg text-sm font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all"
                 value={newLeave.leaveType}
                 onChange={(e) => setNewLeave({...newLeave, leaveType: e.target.value})}
             >
@@ -290,13 +290,13 @@ const EmployeeLeave = () => {
             </select>
           </div>
 
-          <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border border-slate-100">
+          <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg border">
               <input 
                 type="checkbox" 
                 id="halfDay" 
                 checked={newLeave.isHalfDay} 
                 onChange={(e) => setNewLeave({...newLeave, isHalfDay: e.target.checked})}
-                className="w-4 h-4 rounded-md border-slate-300 text-primary focus:ring-primary"
+                className="w-4 h-4 rounded-md text-primary focus:ring-primary"
               />
               <label htmlFor="halfDay" className="text-xs font-bold text-primary cursor-pointer">Register as Partial (Half) Day Absence</label>
           </div>
@@ -323,7 +323,7 @@ const EmployeeLeave = () => {
           <div className="space-y-2">
             <label className="text-[11px] font-black text-muted uppercase tracking-widest">Reason for Leave</label>
             <textarea
-                className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-lg text-sm font-medium text-primary outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all min-h-[100px]"
+                className="w-full px-4 py-2.5 bg-white rounded-lg text-sm font-medium text-primary outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-900 transition-all min-h-[100px]"
                 value={newLeave.reason}
                 onChange={(e) => setNewLeave({...newLeave, reason: e.target.value})}
                 placeholder="Provide reason for leave request..."
@@ -345,7 +345,7 @@ const EmployeeLeave = () => {
                   </div>
               </div>
 
-              <div className="p-4 bg-warning-soft rounded-lg border border-amber-100">
+              <div className="p-4 bg-warning-soft rounded-lg border-amber-100">
                 <div className="flex gap-3">
                   <AlertTriangle className="w-5 h-5 text-warning shrink-0" />
                   <div>

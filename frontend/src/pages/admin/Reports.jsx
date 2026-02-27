@@ -71,12 +71,12 @@ const AdminReports = () => {
 
       <div className="h-px bg-slate-100 mb-8"></div>
 
-      <Card className="mb-8 border-slate-200 shadow-subtle bg-white">
+      <Card className="mb-8 shadow-subtle bg-white">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-end">
               <div className="space-y-2">
                   <label className="text-[10px] font-black text-muted uppercase tracking-widest block">Functional Unit</label>
                   <select 
-                    className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-lg text-xs font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all shadow-subtle"
+                    className="w-full px-4 py-2.5 bg-white rounded-lg text-xs font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all shadow-subtle"
                     value={filters.department}
                     onChange={(e) => setFilters({...filters, department: e.target.value})}
                   >
@@ -92,7 +92,7 @@ const AdminReports = () => {
                   <CalIcon size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-300" />
                   <input 
                     type="date" 
-                    className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold text-primary focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all outline-none"
+                    className="w-full pl-10 pr-4 py-2 bg-white rounded-lg text-xs font-bold text-primary focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all outline-none"
                     value={filters.startDate}
                     onChange={(e) => setFilters({...filters, startDate: e.target.value})}
                   />
@@ -104,7 +104,7 @@ const AdminReports = () => {
                   <CalIcon size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-300" />
                   <input 
                     type="date" 
-                    className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold text-primary focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all outline-none"
+                    className="w-full pl-10 pr-4 py-2 bg-white rounded-lg text-xs font-bold text-primary focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all outline-none"
                     value={filters.endDate}
                     onChange={(e) => setFilters({...filters, endDate: e.target.value})}
                   />
@@ -167,8 +167,8 @@ const AdminReports = () => {
                       { title: "Personnel Performance", icon: Users },
                       { title: "Asset Inventory", icon: FileText }
                   ].map((rep, idx) => (
-                      <div key={idx} className="p-4 bg-slate-50 border border-slate-100 rounded-lg hover:border-primary hover:bg-white transition-all cursor-pointer group flex items-start gap-4">
-                          <div className="p-2.5 rounded-lg bg-white border border-slate-100 text-slate-400 group-hover:text-primary transition-colors">
+                      <div key={idx} className="p-4 bg-slate-50 rounded-lg hover:border-primary hover:bg-white transition-all cursor-pointer group flex items-start gap-4">
+                          <div className="p-2.5 rounded-lg bg-white text-slate-400 group-hover:text-primary transition-colors">
                               <rep.icon size={18} />
                           </div>
                           <div className="min-w-0">

@@ -186,7 +186,7 @@ const AdminLeaveManagement = () => {
                 placeholder="Search by name, employee ID, or department..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
+                className="w-full pl-10 pr-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
               />
             </div>
           </div>
@@ -194,7 +194,7 @@ const AdminLeaveManagement = () => {
             <select
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value)}
-              className="px-4 py-2 border border-slate-200 rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
+              className="px-4 py-2 rounded-lg text-sm font-medium focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none"
             >
               <option value="all">All Status</option>
               <option value="pending">Pending</option>
@@ -210,7 +210,7 @@ const AdminLeaveManagement = () => {
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>
-              <tr className="border-b border-slate-200 text-left">
+              <tr className="border-b text-left">
                 <th className="pb-3 text-xs font-bold text-muted uppercase tracking-wider">Employee</th>
                 <th className="pb-3 text-xs font-bold text-muted uppercase tracking-wider">Leave Type</th>
                 <th className="pb-3 text-xs font-bold text-muted uppercase tracking-wider">Duration</th>
@@ -341,7 +341,7 @@ const AdminLeaveManagement = () => {
                 value={adminComment}
                 onChange={(e) => setAdminComment(e.target.value)}
                 placeholder="Add your comments here..."
-                className="w-full px-4 py-2 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none min-h-[100px]"
+                className="w-full px-4 py-2 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none min-h-[100px]"
                 disabled={selectedLeave.status !== 'pending'}
               />
             </div>
@@ -356,7 +356,7 @@ const AdminLeaveManagement = () => {
 
             {/* Action Buttons */}
             {selectedLeave.status === 'pending' && (
-              <div className="flex gap-3 pt-4 border-t border-slate-100">
+              <div className="flex gap-3 pt-4 border-t">
                 <Button
                   variant="success"
                   className="flex-1 flex items-center justify-center gap-2"
@@ -379,7 +379,7 @@ const AdminLeaveManagement = () => {
             )}
 
             {selectedLeave.status !== 'pending' && (
-              <div className="pt-4 border-t border-slate-100">
+              <div className="pt-4 border-t">
                 <Button
                   variant="secondary"
                   className="w-full"

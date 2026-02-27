@@ -51,7 +51,7 @@ const DataTable = ({ columns, data, actions, onRowClick, filterOptions, selectab
            <input
              type="text"
              placeholder="Filter records..."
-             className="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all shadow-subtle"
+             className="w-full pl-10 pr-4 py-2 bg-white rounded-lg text-xs font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all shadow-subtle"
              value={searchTerm}
              onChange={(e) => setSearchTerm(e.target.value)}
            />
@@ -62,14 +62,14 @@ const DataTable = ({ columns, data, actions, onRowClick, filterOptions, selectab
         </div>
       </div>
 
-      <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-subtle">
+      <div className="bg-white rounded-xl overflow-hidden shadow-subtle">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-[10px] font-black text-muted uppercase tracking-widest">
+              <tr className="bg-slate-50 border-b text-[10px] font-black text-muted uppercase tracking-widest">
                 {selectable && (
                     <th className="py-4 px-6 w-12">
-                        <input type="checkbox" onChange={handleSelectAll} checked={selectedRows.length === currentData.length && currentData.length > 0} className="w-4 h-4 rounded-md border-slate-200 text-primary focus:ring-primary bg-white" />
+                        <input type="checkbox" onChange={handleSelectAll} checked={selectedRows.length === currentData.length && currentData.length > 0} className="w-4 h-4 rounded-md text-primary focus:ring-primary bg-white" />
                     </th>
                 )}
                 {columns.map((col) => (
@@ -93,7 +93,7 @@ const DataTable = ({ columns, data, actions, onRowClick, filterOptions, selectab
                   >
                      {selectable && (
                         <td className="py-4 px-6" onClick={(e) => e.stopPropagation()}>
-                            <input type="checkbox" checked={selectedRows.includes(row.id)} onChange={() => handleSelectRow(row.id)} className="w-4 h-4 rounded-md border-slate-200 text-primary focus:ring-primary" />
+                            <input type="checkbox" checked={selectedRows.includes(row.id)} onChange={() => handleSelectRow(row.id)} className="w-4 h-4 rounded-md text-primary focus:ring-primary" />
                         </td>
                     )}
                     {columns.map((col) => (
@@ -115,7 +115,7 @@ const DataTable = ({ columns, data, actions, onRowClick, filterOptions, selectab
         </div>
 
         {totalPages > 1 && (
-          <div className="flex items-center justify-between px-6 py-4 bg-slate-50/30 border-t border-slate-100">
+          <div className="flex items-center justify-between px-6 py-4 bg-slate-50/30 border-t">
             <p className="text-[10px] font-black text-muted uppercase tracking-widest">
               Record <span className="text-primary font-bold">{(currentPage - 1) * itemsPerPage + 1}</span> to{" "}
               <span className="text-primary font-bold">{Math.min(currentPage * itemsPerPage, filteredData.length)}</span> of{" "}
@@ -125,7 +125,7 @@ const DataTable = ({ columns, data, actions, onRowClick, filterOptions, selectab
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-subtle"
+                className="p-1.5 rounded-lg bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-subtle"
                 title="Previous Batch"
               >
                 <ChevronLeft size={16} className="text-primary" />
@@ -133,7 +133,7 @@ const DataTable = ({ columns, data, actions, onRowClick, filterOptions, selectab
               <button
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="p-1.5 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-subtle"
+                className="p-1.5 rounded-lg bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed transition-all shadow-subtle"
                 title="Next Batch"
               >
                 <ChevronRight size={16} className="text-primary" />

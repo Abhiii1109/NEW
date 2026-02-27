@@ -11,7 +11,7 @@ const AttendanceChart = ({ data, metrics = ["present"], layout = "horizontal" })
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-surface px-3 py-2 rounded-lg shadow-none border border-border">
+        <div className="bg-surface px-3 py-2 rounded-lg shadow-none border">
           <p className="text-sm font-bold text-text-heading mb-1">{payload[0].payload.name}</p>
           {payload.map((entry, index) => (
             <p key={index} className="text-sm font-medium" style={{ color: entry.color }}>

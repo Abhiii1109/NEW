@@ -43,10 +43,10 @@ const TicketItem = ({ ticket, onClick }) => (
       {ticket.description}
     </p>
 
-    <div className="flex items-center gap-4 pt-4 border-t border-slate-50">
+    <div className="flex items-center gap-4 pt-4 border-t">
       <div className="flex -space-x-1">
-        <img src="https://i.pravatar.cc/150?u=hr" className="w-6 h-6 rounded-md border border-white bg-slate-100" alt="HR" />
-        <div className="w-6 h-6 rounded-md bg-slate-900 border border-white flex items-center justify-center text-[8px] font-black text-white">
+        <img src="https://i.pravatar.cc/150?u=hr" className="w-6 h-6 rounded-md border-white bg-slate-100" alt="HR" />
+        <div className="w-6 h-6 rounded-md bg-slate-900 border-white flex items-center justify-center text-[8px] font-black text-white">
           +1
         </div>
       </div>
@@ -196,9 +196,9 @@ const Support = () => {
               initial={{ opacity: 0, scale: 0.98, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: 10 }}
-              className="relative w-full max-w-xl bg-white rounded-xl shadow-2xl overflow-hidden border border-slate-200"
+              className="relative w-full max-w-xl bg-white rounded-xl shadow-2xl overflow-hidden border"
             >
-              <div className="p-8 border-b border-slate-100 flex items-center justify-between">
+              <div className="p-8 border-b flex items-center justify-between">
                 <div>
                     <Badge variant="info" className="mb-2">New Submission</Badge>
                     <h2 className="text-2xl font-black text-primary tracking-tight">Formal Inquiry</h2>
@@ -214,12 +214,12 @@ const Support = () => {
                   <input 
                     type="text" 
                     placeholder="Clear, concise declaration of the issue..."
-                    className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-bold text-primary"
+                    className="w-full px-4 py-2.5 bg-white rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-bold text-primary"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-black text-muted uppercase tracking-widest">Procedural Classification</label>
-                  <select className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-bold text-primary">
+                  <select className="w-full px-4 py-2.5 bg-white rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-bold text-primary">
                     <option>Structural Compensation & Benefits</option>
                     <option>Attendance & Leave Compliance</option>
                     <option>Asset & Technological Infrastructure</option>
@@ -232,12 +232,12 @@ const Support = () => {
                   <textarea 
                     rows={4}
                     placeholder="Explicitly detail the circumstances requiring intervention..."
-                    className="w-full px-4 py-2.5 bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-medium text-primary"
+                    className="w-full px-4 py-2.5 bg-white rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-medium text-primary"
                   />
                 </div>
               </div>
 
-              <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+              <div className="p-6 bg-slate-50 border-t flex justify-end gap-3">
                 <Button 
                   variant="secondary"
                   onClick={() => setIsCreating(false)}

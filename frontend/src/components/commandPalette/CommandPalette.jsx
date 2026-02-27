@@ -98,9 +98,9 @@ const CommandPalette = () => {
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="fixed top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 z-[9999] overflow-hidden"
+            className="fixed top-[15%] left-1/2 -translate-x-1/2 w-full max-w-xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl dark:border-slate-800 z-[9999] overflow-hidden"
           >
-            <div className="flex items-center p-4 border-b border-slate-100 dark:border-slate-800">
+            <div className="flex items-center p-4 border-b dark:border-slate-800">
               <Search className="w-5 h-5 text-slate-400 mr-3" />
               <input
                 autoFocus
@@ -110,7 +110,7 @@ const CommandPalette = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <div className="flex items-center gap-1.5 px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md border border-slate-200 dark:border-slate-700">
+              <div className="flex items-center gap-1.5 px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md dark:border-slate-700">
                 <CommandIcon className="w-3 h-3 text-slate-500" />
                 <span className="text-xs font-medium text-slate-500">K</span>
               </div>
@@ -158,18 +158,18 @@ const CommandPalette = () => {
               )}
             </div>
 
-            <div className="p-3 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+            <div className="p-3 bg-slate-50 dark:bg-slate-900/50 border-t dark:border-slate-800 flex justify-between items-center">
               <div className="flex gap-4">
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-[10px] text-slate-500 shadow-sm">↑↓</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded dark:border-slate-600 bg-white dark:bg-slate-800 text-[10px] text-slate-500 shadow-sm">↑↓</kbd>
                   <span className="text-[10px] text-slate-500 font-medium">Navigate</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-[10px] text-slate-500 shadow-sm">Enter</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded dark:border-slate-600 bg-white dark:bg-slate-800 text-[10px] text-slate-500 shadow-sm">Enter</kbd>
                   <span className="text-[10px] text-slate-500 font-medium">Select</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <kbd className="px-1.5 py-0.5 rounded border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-[10px] text-slate-500 shadow-sm">ESC</kbd>
+                  <kbd className="px-1.5 py-0.5 rounded dark:border-slate-600 bg-white dark:bg-slate-800 text-[10px] text-slate-500 shadow-sm">ESC</kbd>
                   <span className="text-[10px] text-slate-500 font-medium">Close</span>
                 </div>
               </div>

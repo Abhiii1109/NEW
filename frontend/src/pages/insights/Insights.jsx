@@ -34,7 +34,7 @@ import Badge from "../../components/common/Badge";
 const InsightCard = ({ title, value, subtext, trend, icon: Icon, color }) => (
   <Card className="group hover:border-slate-300 transition-all">
     <div className="flex items-start justify-between">
-      <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-slate-400 group-hover:text-primary transition-colors">
+      <div className="p-2.5 rounded-lg bg-slate-50 text-slate-400 group-hover:text-primary transition-colors">
         <Icon size={18} />
       </div>
       {trend && (
@@ -162,7 +162,7 @@ const Insights = () => {
               </AreaChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-6 flex items-center gap-6 border-t border-slate-50 pt-6">
+          <div className="mt-6 flex items-center gap-6 border-t pt-6">
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded bg-primary" />
                 <span className="text-[10px] font-black text-muted uppercase tracking-widest">Attendance Yield</span>
@@ -177,7 +177,7 @@ const Insights = () => {
         <Card title="Predictive Analysis" subtitle="Algorithmic workforce projection" className="bg-primary border-none shadow-premium text-white">
           <div className="relative z-10 flex flex-col h-full justify-between mt-4">
             <div>
-              <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-6 border border-white/10">
+              <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center mb-6 border-white/10">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               
@@ -187,11 +187,11 @@ const Insights = () => {
               </p>
               
               <div className="space-y-3 mb-8">
-                <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10">
+                <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border-white/10">
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Confidence Interval</span>
                   <span className="text-xs font-bold">82.4%</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/10">
+                <div className="flex items-center justify-between p-3 bg-white/5 rounded-lg border-white/10">
                   <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Risk Mitigation</span>
                   <span className="text-xs font-bold text-success font-mono">SAFE</span>
                 </div>
@@ -208,14 +208,14 @@ const Insights = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Card title="Variance Detection" subtitle="Anomalous behavioral patterns">
           <div className="space-y-4 mt-2">
-            <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+            <div className="p-4 bg-slate-50 rounded-lg border">
               <div className="flex justify-between items-start mb-2">
                 <span className="text-xs font-bold text-primary">Late Engagement</span>
                 <Badge variant="danger">High</Badge>
               </div>
               <p className="text-[11px] text-muted leading-relaxed">3 identified instances in current cycle. Mean arrival delay: <span className="text-primary font-bold">14.2m</span>.</p>
             </div>
-            <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
+            <div className="p-4 bg-slate-50 rounded-lg border">
               <div className="flex justify-between items-start mb-2">
                 <span className="text-xs font-bold text-primary">Logging Continuity</span>
                 <Badge variant="warning">Monitor</Badge>
@@ -257,9 +257,9 @@ const Insights = () => {
           </div>
         </Card>
 
-        <div className="bg-slate-100 rounded-xl p-8 flex flex-col justify-between border border-slate-200 group cursor-pointer hover:bg-slate-200 transition-colors">
+        <div className="bg-slate-100 rounded-xl p-8 flex flex-col justify-between group cursor-pointer hover:bg-slate-200 transition-colors">
           <div>
-            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-6 shadow-subtle border border-slate-200">
+            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center mb-6 shadow-subtle border">
               <PieChart size={18} className="text-primary" />
             </div>
             <h3 className="text-xl font-bold text-primary mb-2">Formal Performance Review (PDF)</h3>

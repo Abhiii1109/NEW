@@ -36,7 +36,7 @@ const AdminNotifications = () => {
             )}>
               <div className={cn(
                   "p-2.5 rounded-lg h-fit flex-shrink-0 border",
-                  !note.read ? 'bg-white text-primary border-slate-200 shadow-sm' : 'bg-slate-50 text-slate-300 border-transparent'
+                  !note.read ? 'bg-white text-primary shadow-sm' : 'bg-slate-50 text-slate-300 border-transparent'
               )}>
                 <Bell size={18} />
               </div>
@@ -61,8 +61,8 @@ const AdminNotifications = () => {
             </Card>
           ))
         ) : (
-          <div className="text-center py-32 bg-slate-50/50 rounded-xl border border-dashed border-slate-200">
-             <div className="w-16 h-16 bg-white rounded-xl shadow-subtle border border-slate-100 flex items-center justify-center mx-auto mb-6 text-slate-200">
+          <div className="text-center py-32 bg-slate-50/50 rounded-xl border-dashed">
+             <div className="w-16 h-16 bg-white rounded-xl shadow-subtle flex items-center justify-center mx-auto mb-6 text-slate-200">
                 <ShieldCheck size={32} />
              </div>
              <h3 className="text-base font-bold text-primary mb-1">System Equilibrium</h3>

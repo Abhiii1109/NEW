@@ -40,7 +40,7 @@ const EmployeePayroll = () => {
       <div className="h-px bg-slate-100 mb-8"></div>
 
       {/* Formal Alert Branding */}
-      <div className="mb-8 p-4 bg-error-soft border border-red-100 rounded-lg flex items-center justify-between">
+      <div className="mb-8 p-4 bg-error-soft border-red-100 rounded-lg flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="p-2 bg-error text-white rounded-lg">
             <AlertTriangle className="w-5 h-5" />
@@ -50,26 +50,26 @@ const EmployeePayroll = () => {
             <p className="text-xs text-error-foreground opacity-70 truncate">Tax deductions for Dec 2025 exceed the standard deviation by $150. Immediate review recommended.</p>
           </div>
         </div>
-        <button className="text-[10px] font-black text-error hover:underline uppercase tracking-widest bg-white px-3 py-1.5 rounded-md shadow-sm border border-red-50">Investigate</button>
+        <button className="text-[10px] font-black text-error hover:underline uppercase tracking-widest bg-white px-3 py-1.5 rounded-md shadow-sm border-red-50">Investigate</button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
         <Card className="lg:col-span-2" title="Remuneration Component Breakdown" subtitle="Defined salary structure as per employment agreement">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
                 <div className="space-y-3">
-                    <div className="flex justify-between border-b border-slate-50 pb-2">
+                    <div className="flex justify-between border-b pb-2">
                         <span className="text-muted text-xs font-bold uppercase tracking-tight">Basic Retainer</span>
                         <span className="text-sm font-bold text-primary">${user?.salary?.toLocaleString() || '0'}</span>
                     </div>
-                    <div className="flex justify-between border-b border-slate-50 pb-2">
+                    <div className="flex justify-between border-b pb-2">
                         <span className="text-muted text-xs font-bold uppercase tracking-tight">HRA Allocation</span>
                         <span className="text-sm font-bold text-primary">${((user?.salary || 0) * 0.2).toLocaleString()}</span>
                     </div>
-                    <div className="flex justify-between border-b border-slate-50 pb-2">
+                    <div className="flex justify-between border-b pb-2">
                         <span className="text-muted text-xs font-bold uppercase tracking-tight">Variables</span>
                         <span className="text-sm font-bold text-primary">$2,000</span>
                     </div>
-                    <div className="flex justify-between border-b border-slate-50 pb-2">
+                    <div className="flex justify-between border-b pb-2">
                         <span className="text-muted text-xs font-bold uppercase tracking-tight">Statutory Liabilities</span>
                         <span className="text-sm font-bold text-error">-$1,500</span>
                     </div>
@@ -78,7 +78,7 @@ const EmployeePayroll = () => {
                         <span className="text-lg font-black text-primary">${((user?.salary || 0) * 1.2 + 2000).toLocaleString()}</span>
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center p-4 bg-slate-50/50 rounded-lg border border-slate-100 h-[300px] w-full">
+                <div className="flex flex-col items-center justify-center p-4 bg-slate-50/50 rounded-lg h-[300px] w-full">
                     <PayrollChart type="breakdown" data={salaryBreakdown} />
                 </div>
             </div>
@@ -90,8 +90,8 @@ const EmployeePayroll = () => {
                   <h3 className="text-slate-400 font-black text-[10px] uppercase tracking-widest mb-1">Estimated Next Payout</h3>
                   <p className="text-4xl font-black text-white tracking-tighter">${((user?.salary || 0) * 1.1).toLocaleString()}</p>
                   <div className="mt-8 flex items-center gap-3">
-                      <div className="px-2 py-1 bg-white/10 rounded text-[9px] font-bold text-slate-300 uppercase letter tracking-widest border border-white/10">Cycle: Jan 01, 2026</div>
-                      <div className="px-2 py-1 bg-success/20 text-success rounded text-[9px] font-bold uppercase tracking-widest border border-success/20 flex items-center gap-1">
+                      <div className="px-2 py-1 bg-white/10 rounded text-[9px] font-bold text-slate-300 uppercase letter tracking-widest border-white/10">Cycle: Jan 01, 2026</div>
+                      <div className="px-2 py-1 bg-success/20 text-success rounded text-[9px] font-bold uppercase tracking-widest border-success/20 flex items-center gap-1">
                         <TrendingUp size={10}/> Verified
                       </div>
                   </div>
@@ -101,7 +101,7 @@ const EmployeePayroll = () => {
 
           <Card title="AI Strategic Forecast" subtitle="Predictive bonus allocation">
             <div className="flex items-center gap-4 mt-2">
-              <div className="p-2.5 bg-slate-50 rounded-lg border border-slate-100 text-slate-400">
+              <div className="p-2.5 bg-slate-50 rounded-lg text-slate-400">
                 <Zap size={18} />
               </div>
               <div className="min-w-0">
@@ -114,10 +114,10 @@ const EmployeePayroll = () => {
       </div>
 
       <Card title="Disbursement History" subtitle="Official record of previous fiscal period payments">
-        <div className="overflow-hidden rounded-lg border border-slate-200 mt-2">
+        <div className="overflow-hidden rounded-lg mt-2">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-[11px] text-muted font-bold uppercase tracking-widest">
+              <tr className="bg-slate-50 border-b text-[11px] text-muted font-bold uppercase tracking-widest">
                 <th className="py-4 px-6">Fiscal Month</th>
                 <th className="py-4 px-6">Base Retainer</th>
                 <th className="py-4 px-6">Variables</th>

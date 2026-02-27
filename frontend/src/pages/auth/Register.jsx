@@ -131,7 +131,7 @@ const Register = () => {
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500 bg-white"
+              className="px-4 py-2 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-100 focus:border-blue-500 bg-white"
             >
               <option value="employee">Employee</option>
               <option value="admin">HR / Admin</option>

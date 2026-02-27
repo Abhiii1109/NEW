@@ -4,7 +4,7 @@ const TrendChart = ({ data, dataKey = "value", name = "Value", variant = "line" 
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-surface px-3 py-2 rounded-lg shadow-none border border-border">
+        <div className="bg-surface px-3 py-2 rounded-lg shadow-none border">
           <p className="text-sm font-bold text-text-heading">{payload[0].payload.name}</p>
           <p className="text-sm text-primary font-medium">{name}: {payload[0].value}</p>
         </div>

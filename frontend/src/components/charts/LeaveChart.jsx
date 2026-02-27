@@ -16,7 +16,7 @@ const LeaveChart = ({ data }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-surface px-3 py-2 rounded-lg shadow-none border border-border">
+        <div className="bg-surface px-3 py-2 rounded-lg shadow-none border">
           <p className="text-sm font-bold text-text-heading">{payload[0].name}</p>
           <p className="text-sm text-primary font-medium">{payload[0].value} Days</p>
         </div>

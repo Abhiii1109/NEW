@@ -24,7 +24,7 @@ const OrgNode = ({ person, depth = 0 }) => {
         
         <div 
           className={cn(
-            "relative flex items-center gap-4 p-4 min-w-[320px] bg-white rounded-lg border border-slate-200 shadow-subtle hover:border-primary hover:shadow-premium transition-all",
+            "relative flex items-center gap-4 p-4 min-w-[320px] bg-white rounded-lg shadow-subtle hover:border-primary hover:shadow-premium transition-all",
             depth === 0 && "border-2 border-primary ring-4 ring-slate-900/5 shadow-premium"
           )}
         >
@@ -32,7 +32,7 @@ const OrgNode = ({ person, depth = 0 }) => {
             <img 
               src={person.avatar || `https://ui-avatars.com/api/?name=${person.name}&background=0f172a&color=fff`} 
               alt={person.name} 
-              className="w-12 h-12 rounded-lg object-cover border border-slate-100 shadow-sm" 
+              className="w-12 h-12 rounded-lg object-cover shadow-sm" 
             />
             {depth === 0 && (
               <div className="absolute -top-1.5 -right-1.5 p-1 bg-primary rounded-lg shadow-sm">
@@ -49,8 +49,8 @@ const OrgNode = ({ person, depth = 0 }) => {
               </button>
             </div>
             <p className="text-[10px] font-black text-muted uppercase tracking-widest mt-0.5 mt-1">{person.role}</p>
-            <div className="flex items-center gap-2 mt-3 pt-3 border-t border-slate-50">
-              <div className="px-1.5 py-0.5 rounded bg-slate-50 text-[9px] font-black text-muted uppercase tracking-widest border border-slate-100">
+            <div className="flex items-center gap-2 mt-3 pt-3 border-t">
+              <div className="px-1.5 py-0.5 rounded bg-slate-50 text-[9px] font-black text-muted uppercase tracking-widest border">
                 {person.department}
               </div>
               <div className="flex items-center gap-1 text-[10px] text-muted font-bold truncate">
@@ -63,7 +63,7 @@ const OrgNode = ({ person, depth = 0 }) => {
           {hasSubordinates && (
             <button 
               onClick={() => setIsExpanded(!isExpanded)}
-              className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg bg-white border border-slate-200 flex items-center justify-center shadow-subtle hover:border-primary hover:text-primary transition-colors z-20"
+              className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg bg-white flex items-center justify-center shadow-subtle hover:border-primary hover:text-primary transition-colors z-20"
             >
               {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
             </button>

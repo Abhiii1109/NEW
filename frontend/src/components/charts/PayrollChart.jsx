@@ -7,7 +7,7 @@ import {
 const PayrollChart = ({ type = 'breakdown', data = [], dataKey = 'value' }) => {
   if (!data || data.length === 0) {
     return (
-      <div className="h-full w-full flex items-center justify-center text-[10px] font-black text-muted uppercase tracking-widest bg-slate-50/50 rounded-lg border border-dashed border-slate-200">
+      <div className="h-full w-full flex items-center justify-center text-[10px] font-black text-muted uppercase tracking-widest bg-slate-50/50 rounded-lg border-dashed">
         Disbursement Data Null
       </div>
     );

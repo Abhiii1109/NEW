@@ -5,7 +5,18 @@ import DepartmentChart from "../../components/charts/DepartmentChart";
 import LeaveChart from "../../components/charts/LeaveChart";
 import TrendChart from "../../components/charts/TrendChart";
 import { USERS, ATTENDANCE, LEAVES } from "../../data/dummyData";
-import { Users, Clock, Calendar, CheckCircle, TrendingUp, Briefcase, UserPlus, Activity, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import {
+  Users,
+  Clock,
+  Calendar,
+  CheckCircle,
+  TrendingUp,
+  Briefcase,
+  UserPlus,
+  Activity,
+  ArrowUpRight,
+  ArrowDownRight,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { cn } from "../../utils/cn";
@@ -13,42 +24,42 @@ import Button from "../../components/common/Button";
 import Badge from "../../components/common/Badge";
 
 const AdminDashboard = () => {
-  const totalEmployees = USERS.filter(u => u.role === "employee").length;
+  const totalEmployees = USERS.filter((u) => u.role === "employee").length;
   const presentToday = 42;
-  const pendingLeaves = LEAVES.filter(l => l.status === "Pending").length;
+  const pendingLeaves = LEAVES.filter((l) => l.status === "Pending").length;
 
   const stats = [
-    { 
-      title: "Employees", 
-      value: totalEmployees, 
-      icon: Users, 
+    {
+      title: "Employees",
+      value: totalEmployees,
+      icon: Users,
       change: "+12%",
       trend: "up",
-      color: "primary"
+      color: "primary",
     },
-    { 
-      title: "Present", 
-      value: `${presentToday}/45`, 
-      icon: Clock, 
+    {
+      title: "Present",
+      value: `${presentToday}/45`,
+      icon: Clock,
       change: "+5%",
       trend: "up",
-      color: "success"
+      color: "success",
     },
-    { 
-      title: "Pending", 
-      value: pendingLeaves, 
-      icon: Calendar, 
+    {
+      title: "Pending",
+      value: pendingLeaves,
+      icon: Calendar,
       change: "-3",
       trend: "down",
-      color: "warning"
+      color: "warning",
     },
-    { 
-      title: "Projects", 
-      value: "12", 
-      icon: Briefcase, 
+    {
+      title: "Projects",
+      value: "12",
+      icon: Briefcase,
       change: "+2",
       trend: "up",
-      color: "info"
+      color: "info",
     },
   ];
 
@@ -88,8 +99,12 @@ const AdminDashboard = () => {
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-heading">Overview</h1>
-          <p className="text-text-muted text-xs md:text-sm mt-0.5">Real-time organizational insights</p>
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold text-text-heading">
+            Overview
+          </h1>
+          <p className="text-text-muted text-xs md:text-sm mt-0.5">
+            Real-time organizational insights
+          </p>
         </div>
         <Link to="/admin/onboarding" className="w-full sm:w-auto">
           <Button variant="primary" className="w-full sm:w-auto shadow-none">
@@ -108,113 +123,192 @@ const AdminDashboard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: idx * 0.05 }}
           >
-            <Card className="hover:shadow-hover transition-all p-4 md:p-6" accent={stat.color}>
+            <Card className="hover:shadow-hover transition-all p-4 md:p-6">
               <div className="flex items-start justify-between">
-                <div className={cn(
-                  "p-2.5 rounded-xl",
-                  stat.color === "primary" && "bg-primary-soft text-primary",
-                  stat.color === "success" && "bg-success-soft text-success",
-                  stat.color === "warning" && "bg-warning-soft text-warning",
-                  stat.color === "info" && "bg-info-soft text-info"
-                )}>
+                <div
+                  className={cn(
+                    "p-2.5 rounded-xl",
+                    stat.color === "primary" && "bg-primary-soft text-primary",
+                    stat.color === "success" && "bg-success-soft text-success",
+                    stat.color === "warning" && "bg-warning-soft text-warning",
+                    stat.color === "info" && "bg-info-soft text-info",
+                  )}
+                >
                   <stat.icon size={22} className="md:w-6 md:h-6" />
                 </div>
-                <div className={cn(
-                  "flex items-center gap-1 text-[10px] md:text-xs font-bold px-2 py-1 rounded-full",
-                  stat.trend === "up" ? "bg-success-soft text-success" : "bg-error-soft text-error"
-                )}>
-                  {stat.trend === "up" ? <ArrowUpRight size={14} /> : <ArrowDownRight size={14} />}
+                <div
+                  className={cn(
+                    "flex items-center gap-1 text-[10px] md:text-xs font-bold px-2 py-1 rounded-full",
+                    stat.trend === "up"
+                      ? "bg-success-soft text-success"
+                      : "bg-error-soft text-error",
+                  )}
+                >
+                  {stat.trend === "up" ? (
+                    <ArrowUpRight size={14} />
+                  ) : (
+                    <ArrowDownRight size={14} />
+                  )}
                   {stat.change}
                 </div>
               </div>
               <div className="mt-4">
-                <p className="text-xs md:text-sm font-medium text-text-muted">{stat.title}</p>
-                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-text-heading mt-0.5">{stat.value}</p>
+                <p className="text-xs md:text-sm font-medium text-text-muted">
+                  {stat.title}
+                </p>
+                <p className="text-xl md:text-2xl lg:text-3xl font-bold text-text-heading mt-0.5">
+                  {stat.value}
+                </p>
               </div>
             </Card>
           </motion.div>
         ))}
       </div>
 
-      {/* Charts Row 1 */}
+      {/* Charts Row 1 - Attendance & Leave */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card title="Attendance Performance" subtitle="Weekly distribution" accent="info" className="lg:col-span-2">
+        <Card
+          title="Attendance Performance"
+          subtitle="Weekly distribution"
+          className="lg:col-span-2"
+        >
           <div className="h-[280px] md:h-[320px] w-full mt-4">
-            <AttendanceChart data={companyAttendanceTrend} metrics={['present', 'late']} />
+            <AttendanceChart
+              data={companyAttendanceTrend}
+              metrics={["present", "late"]}
+            />
           </div>
         </Card>
-        <Card title="Request Status" subtitle="Leave cycle distribution" accent="warning">
-          <div className="h-[280px] md:h-[320px] w-full mt-4 flex justify-center">
+        <Card title="Request Status" subtitle="Leave cycle distribution">
+          <div className="h-[280px] md:h-[320px] w-full mt-4 flex items-center justify-center">
             <LeaveChart data={leaveRequestData} />
           </div>
         </Card>
       </div>
 
-      {/* Charts Row 2 */}
+      {/* Charts Row 2 - Growth & Department */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card title="Workforce Growth" subtitle="Net headcount trajectory" accent="success">
+        <Card title="Workforce Growth" subtitle="Net headcount trajectory">
           <div className="h-[280px] md:h-[320px] w-full mt-4">
-            <TrendChart variant="area" data={employeeGrowth} dataKey="value" name="PersonnelCount" />
+            <TrendChart
+              variant="area"
+              data={employeeGrowth}
+              dataKey="value"
+              name="PersonnelCount"
+            />
           </div>
         </Card>
-        <Card title="Team Engagement" subtitle="Functional unit metrics" accent="primary">
+        <Card title="Team Engagement" subtitle="Functional unit metrics">
           <div className="h-[280px] md:h-[320px] w-full mt-4">
-            <DepartmentChart data={deptAttendance} keys={['onTime', 'late']} />
+            <DepartmentChart data={deptAttendance} keys={["onTime", "late"]} />
           </div>
         </Card>
       </div>
 
-      {/* Bottom Grid */}
+      {/* Bottom Grid - Activity & KPIs */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card title="Recent Personnel Actions" subtitle="Audit activity feed" className="lg:col-span-2 overflow-hidden">
+        <Card
+          title="Recent Personnel Actions"
+          subtitle="Audit activity feed"
+          className="lg:col-span-2 overflow-hidden"
+        >
           <div className="space-y-1 mt-2 -mx-2">
             {[
-              { user: "Deepa Mehta", action: "Recalibrated payroll matrix", time: "12m", icon: Briefcase, status: "success" },
-              { user: "Vikram Singh", action: "Authorized leave protocols", time: "1h", icon: CheckCircle, status: "success" },
-              { user: "System Engine", action: "Synchronized fiscal data", time: "3h", icon: Activity, status: "info" },
+              {
+                user: "Deepa Mehta",
+                action: "Recalibrated payroll matrix",
+                time: "12m",
+                icon: Briefcase,
+                status: "success",
+              },
+              {
+                user: "Vikram Singh",
+                action: "Authorized leave protocols",
+                time: "1h",
+                icon: CheckCircle,
+                status: "success",
+              },
+              {
+                user: "System Engine",
+                action: "Synchronized fiscal data",
+                time: "3h",
+                icon: Activity,
+                status: "info",
+              },
             ].map((log, i) => (
-              <div key={i} className="flex items-center gap-3 md:gap-4 p-3 rounded-xl hover:bg-surface-hover transition-all group">
-                <div className={cn(
-                  "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-110",
-                  log.status === "success" && "bg-success-soft text-success",
-                  log.status === "info" && "bg-info-soft text-info"
-                )}>
+              <div
+                key={i}
+                className="flex items-center gap-3 md:gap-4 p-3 rounded-xl hover:bg-surface-hover transition-all group"
+              >
+                <div
+                  className={cn(
+                    "w-10 h-10 rounded-xl flex items-center justify-center shrink-0 shadow-sm transition-transform group-hover:scale-110",
+                    log.status === "success" && "bg-success-soft text-success",
+                    log.status === "info" && "bg-info-soft text-info",
+                  )}
+                >
                   <log.icon size={18} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <h4 className="font-bold text-text-heading text-sm truncate">{log.user}</h4>
-                    <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider shrink-0">{log.time} AGO</span>
+                    <h4 className="font-bold text-text-heading text-sm truncate">
+                      {log.user}
+                    </h4>
+                    <span className="text-[10px] font-bold text-text-muted uppercase tracking-wider shrink-0">
+                      {log.time} AGO
+                    </span>
                   </div>
-                  <p className="text-xs text-text-muted mt-0.5 truncate leading-relaxed">{log.action}</p>
+                  <p className="text-xs text-text-muted mt-0.5 truncate leading-relaxed">
+                    {log.action}
+                  </p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="mt-4 pt-4 border-t border-border flex justify-center">
-            <Button variant="ghost" size="sm" className="text-xs font-bold uppercase tracking-widest text-primary">
+          <div className="mt-4 pt-4 flex justify-center">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-xs font-bold uppercase tracking-widest text-primary"
+            >
               View Detailed Audit Log
             </Button>
           </div>
         </Card>
-        
+
         <Card title="Operational KPIs" subtitle="Snapshot metrics">
           <div className="space-y-3 mt-4">
             {[
               { label: "Efficiency Index", value: "94.2%", status: "success" },
               { label: "Retention Rate", value: "88.5%", status: "success" },
-              { label: "Pending Reviews", value: "05 Tasks", status: "warning" },
+              {
+                label: "Pending Reviews",
+                value: "05 Tasks",
+                status: "warning",
+              },
             ].map((item, idx) => (
-              <div key={idx} className="flex items-center justify-between p-3.5 rounded-xl bg-background border border-border hover:border-primary/20 transition-colors group">
-                <span className="text-xs md:text-sm font-bold text-text-muted group-hover:text-text-heading transition-colors">{item.label}</span>
-                <Badge variant={item.status} dot>{item.value}</Badge>
+              <div
+                key={idx}
+                className="flex items-center justify-between p-3.5 rounded-xl bg-background hover:shadow-sm transition-all group"
+              >
+                <span className="text-xs md:text-sm font-bold text-text-muted group-hover:text-text-heading transition-colors">
+                  {item.label}
+                </span>
+                <Badge variant={item.status} dot>
+                  {item.value}
+                </Badge>
               </div>
             ))}
           </div>
-          <div className="mt-6 p-4 rounded-2xl bg-primary-soft border border-primary/10 relative overflow-hidden group">
+          <div className="mt-6 p-4 rounded-2xl bg-primary-soft relative overflow-hidden group">
             <div className="relative z-10">
-              <p className="text-xs font-bold text-primary uppercase tracking-widest">System Intelligence</p>
-              <p className="text-[11px] text-text-muted mt-2 leading-relaxed">Organizational health is currently <strong>Optimal</strong> based on active metrics.</p>
+              <p className="text-xs font-bold text-primary uppercase tracking-widest">
+                System Intelligence
+              </p>
+              <p className="text-[11px] text-text-muted mt-2 leading-relaxed">
+                Organizational health is currently <strong>Optimal</strong>{" "}
+                based on active metrics.
+              </p>
             </div>
             <Activity className="absolute -bottom-2 -right-2 text-primary/10 w-16 h-16 group-hover:scale-125 transition-transform" />
           </div>

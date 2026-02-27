@@ -129,10 +129,10 @@ const OnboardingWizard = () => {
                     return (
                         <div key={s.id} className="flex flex-col items-center relative z-10 flex-1">
                             <div className={cn(
-                                "w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-300",
+                                "w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300",
                                 isActive 
                                     ? "bg-primary border-primary text-white shadow-premium scale-110" 
-                                    : "bg-white border-slate-200 text-slate-300"
+                                    : "bg-white text-slate-300"
                             )}>
                                 <Icon size={18} />
                             </div>
@@ -151,7 +151,7 @@ const OnboardingWizard = () => {
                 })}
             </div>
 
-            <Card className="max-w-3xl mx-auto shadow-premium border-slate-200">
+            <Card className="max-w-3xl mx-auto shadow-premium">
                 {step === 1 && (
                     <div className="space-y-8 animate-in slide-in-from-right-2 fade-in duration-300">
                         <div>
@@ -256,7 +256,7 @@ const OnboardingWizard = () => {
                     </div>
                 )}
 
-                <div className="flex justify-between mt-12 pt-8 border-t border-slate-100">
+                <div className="flex justify-between mt-12 pt-8 border-t">
                     <Button variant="secondary" onClick={handleBack} disabled={step === 1 || loading} className="flex items-center gap-2">
                         <ArrowLeft size={16} /> Back
                     </Button>

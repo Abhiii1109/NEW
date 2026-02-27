@@ -23,7 +23,7 @@ const OrgChartPage = () => {
             <input 
               type="text" 
               placeholder="Search personnel or role..." 
-              className="pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-xs font-bold text-primary w-64"
+              className="pl-10 pr-4 py-2 bg-white rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-xs font-bold text-primary w-64"
             />
           </div>
           <Button variant="secondary" className="p-2.5">
@@ -37,7 +37,7 @@ const OrgChartPage = () => {
 
       <div className="h-px bg-slate-100 mb-8"></div>
 
-      <div className="bg-slate-50/50 rounded-xl border border-slate-200 border-dashed p-4 min-h-[750px] overflow-hidden">
+      <div className="bg-slate-50/50 rounded-xl border-dashed p-4 min-h-[750px] overflow-hidden">
         <OrgChart />
       </div>
     </PageWrapper>

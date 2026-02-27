@@ -35,7 +35,7 @@ const WorkdayTimeline = ({ activities = [] }) => {
     switch (status) {
       case "completed": return "text-emerald-500 bg-emerald-50 dark:bg-emerald-900/20 border-emerald-100 dark:border-emerald-800";
       case "active": return "text-indigo-500 bg-indigo-50 dark:bg-indigo-900/20 border-indigo-100 dark:border-indigo-800 ring-2 ring-indigo-500 ring-offset-2 dark:ring-offset-slate-900";
-      case "upcoming": return "text-slate-400 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800";
+      case "upcoming": return "text-slate-400 bg-slate-50 dark:bg-slate-800/50 dark:border-slate-800";
       default: return "text-slate-500";
     }
   };
@@ -58,7 +58,7 @@ const WorkdayTimeline = ({ activities = [] }) => {
               className="relative flex items-start gap-4"
             >
               <div className={cn(
-                "relative z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full border shadow-sm transition-all",
+                "relative z-10 flex items-center justify-center w-[44px] h-[44px] rounded-full shadow-sm transition-all",
                 statusStyles
               )}>
                 <Icon className="w-5 h-5" />

@@ -99,7 +99,7 @@ const Lifecycle = () => {
                   <h3 className="font-bold text-foreground px-1">Implementation Roadmap</h3>
                   {onboardingSteps.map((step, i) => (
                       <div key={step.id} className={cn(
-                          "relative p-5 rounded-2xl border transition-all flex items-start gap-4",
+                          "relative p-5 rounded-2xl transition-all flex items-start gap-4",
                           step.status === "completed" ? "bg-success/5 border-success/10" : 
                           step.status === "current" ? "bg-white border-primary shadow-lg scale-[1.02] z-10" : 
                           "bg-soft/50 border-transparent opacity-60"
@@ -136,7 +136,7 @@ const Lifecycle = () => {
                       { icon: Key, label: "Digital Token ID", status: "Active" },
                       { icon: Package, label: "Welcome Merch", status: "Deliverd" },
                     ].map((item, i) => (
-                      <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-soft/40 border border-slate-50">
+                      <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-soft/40 border">
                         <div className="flex items-center gap-3">
                           <item.icon size={16} className="text-muted" />
                           <span className="text-xs font-bold text-foreground">{item.label}</span>
@@ -176,7 +176,7 @@ const Lifecycle = () => {
               <Card title="Offboarding Checklist" subtitle="Formal separation procedure documentation">
                   <div className="space-y-1 mt-6">
                     {offboardingTasks.map((task, i) => (
-                      <div key={task.id} className="flex items-center justify-between p-4 rounded-xl hover:bg-soft transition-all group border-b border-border last:border-0">
+                      <div key={task.id} className="flex items-center justify-between p-4 rounded-xl hover:bg-soft transition-all group border-b last:border-0">
                          <div className="flex items-center gap-4">
                             <button className={cn(
                               "w-6 h-6 rounded-lg border-2 flex items-center justify-center transition-all",
@@ -208,7 +208,7 @@ const Lifecycle = () => {
                   <Button variant="danger" size="md" className="w-full mt-6 shadow-error/20">Purge Personnel Access</Button>
               </Card>
               <Card title="Exit Knowledge" subtitle="Handoff documentation">
-                  <div className="p-4 rounded-xl bg-soft border border-dashed border-border flex flex-col items-center justify-center text-center">
+                  <div className="p-4 rounded-xl bg-soft border-dashed flex flex-col items-center justify-center text-center">
                       <FileText size={32} className="text-muted mb-2" />
                       <p className="text-[10px] font-bold text-muted uppercase tracking-widest">No Documents Uploaded</p>
                       <Button variant="ghost" className="mt-4 text-xs font-bold text-primary px-0">Upload Handoff Docs</Button>

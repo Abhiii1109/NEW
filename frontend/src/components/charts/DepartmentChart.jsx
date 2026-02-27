@@ -11,7 +11,7 @@ const DepartmentChart = ({ data, keys = ["onTime", "late"] }) => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white px-3 py-2 rounded-lg shadow-lg border border-border">
+        <div className="bg-white px-3 py-2 rounded-lg shadow-lg border">
           <p className="text-sm font-semibold text-foreground mb-1">{payload[0].payload.name}</p>
           {payload.map((entry, index) => (
             <p key={index} className="text-sm font-medium" style={{ color: entry.color }}>

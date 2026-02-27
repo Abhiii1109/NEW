@@ -19,7 +19,7 @@
   input,
   select,
   textarea {
-    @apply bg-surface border border-border rounded-lg focus:ring-2 focus:ring-primary-soft focus:border-primary transition-all outline-none placeholder:text-text-muted;
+    @apply bg-surface rounded-lg focus:ring-2 focus:ring-primary-soft focus:border-primary transition-all outline-none placeholder:text-text-muted;
   }
 }
 

@@ -13,7 +13,7 @@ const Card = ({ children, className, title, subtitle, loading, accent, icon: Ico
   return (
     <div 
       className={cn(
-        "bg-surface rounded-2xl border border-border transition-all duration-300",
+        "bg-surface rounded-2xl transition-all duration-300",
         "shadow-none hover:shadow-hover", // Shadow only on hover
         "p-6",
         accent && `border-t-2 ${accentColors[accent]}`, // Optional top accent

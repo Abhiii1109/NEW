@@ -77,24 +77,24 @@ const CalendarPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Calendar Grid */}
           <Card className="lg:col-span-3 p-0 overflow-hidden">
-            <div className="p-4 md:p-6 border-b border-border flex items-center justify-between bg-soft/30">
+            <div className="p-4 md:p-6 border-b flex items-center justify-between bg-soft/30">
               <h3 className="font-bold text-lg text-foreground">{monthNames[month]} {year}</h3>
               <div className="flex gap-2">
-                <button onClick={() => setCurrentDate(new Date(year, month - 1))} className="p-2 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-border"><ChevronLeft size={18} /></button>
-                <button onClick={() => setCurrentDate(new Date())} className="px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary hover:bg-white rounded-lg border border-transparent hover:border-border">Today</button>
-                <button onClick={() => setCurrentDate(new Date(year, month + 1))} className="p-2 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-border"><ChevronRight size={18} /></button>
+                <button onClick={() => setCurrentDate(new Date(year, month - 1))} className="p-2 hover:bg-white rounded-lg transition-colors border-transparent hover:border-border"><ChevronLeft size={18} /></button>
+                <button onClick={() => setCurrentDate(new Date())} className="px-3 py-1 text-xs font-bold uppercase tracking-widest text-primary hover:bg-white rounded-lg border-transparent hover:border-border">Today</button>
+                <button onClick={() => setCurrentDate(new Date(year, month + 1))} className="p-2 hover:bg-white rounded-lg transition-colors border-transparent hover:border-border"><ChevronRight size={18} /></button>
               </div>
             </div>
             
-            <div className="grid grid-cols-7 border-b border-border bg-soft/10">
+            <div className="grid grid-cols-7 border-b bg-soft/10">
               {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map(d => (
-                <div key={d} className="py-3 text-center text-[10px] font-black uppercase tracking-widest text-muted border-r border-border last:border-0">{d}</div>
+                <div key={d} className="py-3 text-center text-[10px] font-black uppercase tracking-widest text-muted border-r last:border-0">{d}</div>
               ))}
             </div>
 
-            <div className="grid grid-cols-7 border-l border-border">
+            <div className="grid grid-cols-7 border-l">
               {Array.from({ length: startDay }).map((_, i) => (
-                <div key={`empty-${i}`} className="h-24 md:h-32 border-r border-b border-border bg-soft/5" />
+                <div key={`empty-${i}`} className="h-24 md:h-32 border-r border-b bg-soft/5" />
               ))}
               {Array.from({ length: days }).map((_, i) => {
                 const day = i + 1;
@@ -103,7 +103,7 @@ const CalendarPage = () => {
 
                 return (
                   <div key={day} className={cn(
-                    "h-24 md:h-32 border-r border-b border-border p-2 md:p-3 hover:bg-soft/20 transition-colors relative group",
+                    "h-24 md:h-32 border-r border-b p-2 md:p-3 hover:bg-soft/20 transition-colors relative group",
                     isToday && "bg-primary/5"
                   )}>
                     <span className={cn(
@@ -133,7 +133,7 @@ const CalendarPage = () => {
             <Card title="Upcoming Highlights" subtitle="Events in the next 14 days">
                <div className="space-y-4 mt-4">
                  {teamEvents.map((e, i) => (
-                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-soft/50 hover:bg-soft transition-colors border border-transparent hover:border-border group">
+                   <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-soft/50 hover:bg-soft transition-colors border-transparent hover:border-border group">
                       <div className={cn("w-2 h-10 rounded-full shrink-0", e.color)} />
                       <div className="flex-1 min-w-0">
                         <div className="flex justify-between items-start">
@@ -145,7 +145,7 @@ const CalendarPage = () => {
                    </div>
                  ))}
                </div>
-               <div className="mt-6 p-4 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center gap-3">
+               <div className="mt-6 p-4 rounded-xl bg-indigo-50 border-indigo-100 flex items-center gap-3">
                   <div className="p-2 bg-white rounded-lg text-indigo-600 shadow-sm"><AlertCircle size={18} /></div>
                   <p className="text-[10px] text-indigo-700 font-medium leading-relaxed">Don't forget to send a gift card to <strong>James</strong> for his Work Anniversary!</p>
                </div>
@@ -178,7 +178,7 @@ const CalendarPage = () => {
                   ))}
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-border flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t flex items-center justify-between">
                   {room.status === "Occupied" ? (
                     <div className="flex items-center gap-1.5 text-xs text-muted font-medium">
                       <Clock size={14} /> Busy until {room.until}

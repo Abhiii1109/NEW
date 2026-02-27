@@ -50,7 +50,7 @@ export const ToastProvider = ({ children }) => {
               animate={{ opacity: 1, x: 0, scale: 1 }}
               exit={{ opacity: 0, x: 50, scale: 0.9 }}
               layout
-              className={`pointer-events-auto min-w-[300px] max-w-sm w-full p-4 rounded-xl border shadow-lg flex items-start gap-3 backdrop-blur-sm ${bgColors[toast.type] || "bg-white"}`}
+              className={`pointer-events-auto min-w-[300px] max-w-sm w-full p-4 rounded-xl shadow-lg flex items-start gap-3 backdrop-blur-sm ${bgColors[toast.type] || "bg-white"}`}
             >
               <div className="flex-shrink-0 mt-0.5">{icons[toast.type]}</div>
               <div className="flex-1">

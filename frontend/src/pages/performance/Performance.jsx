@@ -130,7 +130,7 @@ const Performance = () => {
                   </div>
                 </Card>
               ))}
-              <Button variant="ghost" className="w-full py-4 border-2 border-dashed border-border rounded-2xl text-muted hover:border-primary/20 hover:text-primary transition-all">
+              <Button variant="ghost" className="w-full py-4 border-2 border-dashed rounded-2xl text-muted hover:border-primary/20 hover:text-primary transition-all">
                 <MessageSquare size={18} />
                 <span>Request Feedback from Peers</span>
               </Button>
@@ -176,7 +176,7 @@ const Performance = () => {
               <span className="text-muted font-bold text-sm mb-1.5">/ 10</span>
             </div>
             <p className="text-xs text-muted mt-4 leading-relaxed">Your performance is in the <strong>top 5%</strong> of the engineering department this quarter.</p>
-            <div className="mt-6 pt-6 border-t border-border">
+            <div className="mt-6 pt-6 border-t">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-xs font-bold text-muted uppercase tracking-widest">Growth Path</span>
                 <span className="text-success text-xs font-bold">+12% vs last Q</span>

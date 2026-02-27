@@ -25,7 +25,7 @@ const PolicyCard = ({ policy, onClick }) => (
     className="group cursor-pointer hover:border-primary transition-all flex flex-col items-start h-full"
     onClick={() => onClick(policy)}
   >
-    <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-100 text-slate-400 group-hover:text-primary transition-colors mb-4">
+    <div className="p-2.5 rounded-lg bg-slate-50 text-slate-400 group-hover:text-primary transition-colors mb-4">
       <policy.icon size={18} />
     </div>
     <h3 className="text-base font-bold text-primary mb-2">{policy.title}</h3>
@@ -116,7 +116,7 @@ const Policies = () => {
           <input 
             type="text" 
             placeholder="Filter by keyword..." 
-            className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-bold text-primary"
+            className="w-full pl-10 pr-4 py-2.5 bg-white rounded-lg outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all text-sm font-bold text-primary"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -131,8 +131,8 @@ const Policies = () => {
         ))}
       </div>
 
-      <div className="mt-12 p-8 bg-slate-50 rounded-xl border border-slate-100 flex flex-col md:flex-row items-center gap-8 shadow-subtle">
-        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm border border-slate-200 shrink-0">
+      <div className="mt-12 p-8 bg-slate-50 rounded-xl flex flex-col md:flex-row items-center gap-8 shadow-subtle">
+        <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm shrink-0">
           <Info size={20} className="text-primary" />
         </div>
         <div className="flex-1 text-center md:text-left">
@@ -158,9 +158,9 @@ const Policies = () => {
               initial={{ opacity: 0, scale: 0.98, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: 10 }}
-              className="relative w-full max-w-2xl bg-white rounded-xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col border border-slate-200"
+              className="relative w-full max-w-2xl bg-white rounded-xl shadow-2xl overflow-hidden max-h-[85vh] flex flex-col border"
             >
-              <div className="p-8 border-b border-slate-100">
+              <div className="p-8 border-b">
                 <div className="flex items-start justify-between">
                   <div>
                     <Badge variant="info" className="mb-2">Official Protocol</Badge>
@@ -193,12 +193,12 @@ const Policies = () => {
                   </div>
                 </section>
 
-                <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 italic border-l-4 border-l-primary">
+                <div className="p-4 bg-slate-50 rounded-lg italic border-l-4 border-l-primary">
                   <p className="text-[11px] text-muted leading-relaxed font-medium">Disclaimer: This digital summary is for reference only. The notarized PDF remains the authoritative legal source of truth.</p>
                 </div>
               </div>
 
-              <div className="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-3">
+              <div className="p-6 bg-slate-50 border-t flex justify-end gap-3">
                 <Button variant="secondary" onClick={() => setSelectedPolicy(null)}>Dismiss</Button>
                 <Button className="flex items-center gap-2">
                   <Download size={14} /> Download PDF Dossier

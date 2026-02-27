@@ -53,7 +53,7 @@ const EmployeeProfile = () => {
               <img
                 src={isEditing ? formData.avatar : (user?.avatar || `https://ui-avatars.com/api/?name=${user?.name}&background=0f172a&color=fff`)}
                 alt="Profile"
-                className="w-24 h-24 rounded-xl object-cover border border-slate-200 shadow-premium transition-transform group-hover:scale-105"
+                className="w-24 h-24 rounded-xl object-cover shadow-premium transition-transform group-hover:scale-105"
               />
               <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-success rounded-full ring-4 ring-white"></div>
             </div>

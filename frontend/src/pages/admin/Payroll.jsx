@@ -97,10 +97,10 @@ const AdminPayroll = () => {
       </div>
 
       <Card title="Payroll Register" subtitle="Personnel disbursement logs">
-        <div className="overflow-x-auto rounded-lg border border-slate-200 mt-4">
+        <div className="overflow-x-auto rounded-lg mt-4">
           <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-[11px] text-muted font-bold uppercase tracking-widest">
+              <tr className="bg-slate-50 border-b text-[11px] text-muted font-bold uppercase tracking-widest">
                 <th className="py-4 px-6">Personnel Identifier</th>
                 <th className="py-4 px-6">Functional Unit</th>
                 <th className="py-4 px-6 text-right">Base Retainer</th>

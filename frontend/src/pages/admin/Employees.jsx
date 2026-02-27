@@ -76,7 +76,7 @@ const AdminEmployees = () => {
             header: "Personnel Identifier",
             render: (row) => (
                 <div className="flex items-center gap-3">
-                    <img src={row.avatar || `https://ui-avatars.com/api/?name=${row.name}&background=0f172a&color=fff`} alt="" className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200" />
+                    <img src={row.avatar || `https://ui-avatars.com/api/?name=${row.name}&background=0f172a&color=fff`} alt="" className="w-8 h-8 rounded-lg bg-slate-100 border" />
                     <div className="min-w-0">
                         <p className="text-sm font-bold text-primary truncate">{row.name}</p>
                         <p className="text-[10px] text-muted font-bold uppercase tracking-tight truncate">{row.email}</p>
@@ -137,7 +137,7 @@ const AdminEmployees = () => {
                 selectable
                 onSelectionChange={setSelectedRows}
                 filterOptions={
-                    <select className="px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all shadow-subtle min-w-[200px]">
+                    <select className="px-4 py-2 bg-white rounded-lg text-xs font-bold text-primary outline-none focus:ring-2 focus:ring-slate-900/5 focus:border-slate-900 transition-all shadow-subtle min-w-[200px]">
                         <option value="">Sort by Unit: All</option>
                         <option value="Engineering">Engineering Division</option>
                         <option value="HR">Human Resources</option>
@@ -154,7 +154,7 @@ const AdminEmployees = () => {
                         <Input label="Departmental Unit" defaultValue={editingEmp?.department} placeholder="Engineering" />
                         <Input label="Official Designation" defaultValue={editingEmp?.designation} placeholder="Software Engineer" />
                     </div>
-                    <div className="flex justify-end gap-3 pt-6 border-t border-slate-50">
+                    <div className="flex justify-end gap-3 pt-6 border-t">
                         <Button variant="secondary" type="button" onClick={() => setIsModalOpen(false)}>Dismiss</Button>
                         <Button type="submit">Finalize Record</Button>
                     </div>

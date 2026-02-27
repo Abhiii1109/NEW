@@ -246,7 +246,7 @@ const EmployeeAttendance = () => {
                 <div
                   key={idx}
                   className={cn(
-                    "aspect-square p-2 rounded-lg border text-center relative",
+                    "aspect-square p-2 rounded-lg text-center relative",
                     isToday && "ring-2 ring-primary",
                     attendance ? getStatusColor(attendance.status) : "bg-gray-50 text-gray-400"
                   )}

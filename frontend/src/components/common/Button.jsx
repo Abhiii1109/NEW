@@ -11,7 +11,7 @@ const Button = ({ children, variant = "primary", className, size = "md", ...prop
   
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary-hover shadow-subtle hover:shadow-md hover:-translate-y-[1px] focus:ring-primary",
-    secondary: "bg-white text-primary border border-primary hover:bg-primary-soft focus:ring-primary",
+    secondary: "bg-white text-primary border-primary hover:bg-primary-soft focus:ring-primary",
     tertiary: "text-text-muted hover:bg-primary-soft hover:text-primary bg-transparent",
     ghost: "text-text-muted hover:bg-primary-soft hover:text-primary bg-transparent", // Alias for tertiary
     success: "bg-success text-success-foreground hover:opacity-90 shadow-subtle hover:shadow-md",

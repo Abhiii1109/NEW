@@ -30,7 +30,7 @@ const CompleteProfile = () => {
         <div className="min-h-screen bg-slate-50 py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto">
                 <div className="mb-12 text-center">
-                    <div className="w-12 h-12 bg-white rounded-xl shadow-subtle border border-slate-100 flex items-center justify-center mx-auto mb-6">
+                    <div className="w-12 h-12 bg-white rounded-xl shadow-subtle flex items-center justify-center mx-auto mb-6">
                         <ShieldCheck size={24} className="text-primary" />
                     </div>
                     <h1 className="text-3xl font-black text-primary tracking-tighter">Identity Verification</h1>
@@ -45,10 +45,10 @@ const CompleteProfile = () => {
                         return (
                             <div key={s.id} className="flex flex-col items-center bg-slate-50 px-2">
                                 <div className={cn(
-                                    "w-10 h-10 rounded-lg flex items-center justify-center border transition-all duration-300",
+                                    "w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300",
                                     isActive 
                                         ? "bg-primary border-primary text-white shadow-premium scale-110" 
-                                        : "bg-white border-slate-200 text-slate-300"
+                                        : "bg-white text-slate-300"
                                 )}>
                                     <Icon size={18} />
                                 </div>
@@ -61,7 +61,7 @@ const CompleteProfile = () => {
                     })}
                 </div>
 
-                <Card className="shadow-premium border-slate-200">
+                <Card className="shadow-premium">
                     {step === 1 && (
                         <div className="space-y-8 animate-in slide-in-from-right-2 fade-in duration-300">
                              <div>
@@ -97,7 +97,7 @@ const CompleteProfile = () => {
                                 <h2 className="text-lg font-bold text-primary tracking-tight">Artifact Sequential Transmission</h2>
                                 <p className="text-[10px] text-muted font-black uppercase tracking-widest mt-1">Verification Documentation</p>
                              </div>
-                             <div className="border-2 border-dashed border-slate-200 rounded-lg p-12 text-center hover:border-primary hover:bg-slate-50/50 transition-all cursor-pointer group">
+                             <div className="border-2 border-dashed rounded-lg p-12 text-center hover:border-primary hover:bg-slate-50/50 transition-all cursor-pointer group">
                                 <Upload className="mx-auto text-slate-300 group-hover:text-primary mb-4 transition-colors" size={32} />
                                 <p className="text-xs font-bold text-primary">Execute ID Proof Transmission</p>
                                 <p className="text-[10px] text-muted font-black uppercase tracking-widest mt-2">Format: PNG, JPG, PDF (Limit 5MB)</p>
@@ -105,7 +105,7 @@ const CompleteProfile = () => {
                         </div>
                     )}
 
-                    <div className="mt-12 pt-8 border-t border-slate-100 flex justify-end gap-3">
+                    <div className="mt-12 pt-8 border-t flex justify-end gap-3">
                         {step > 1 && (
                             <Button variant="secondary" onClick={() => setStep(step - 1)} className="flex items-center gap-2">
                                 <ArrowLeft size={16} /> Previous
